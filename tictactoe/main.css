@@ -1,0 +1,86 @@
+* {
+  cursor:default;
+}
+html {
+  overflow-y:scroll;
+}
+body {
+  background-color:#FFFEEF;
+}
+div {
+  border-radius:2px;
+}
+#title {
+  font-family: Futura;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+  margin:5px;
+  color:grey;
+  text-shadow:3px 3px 0px #E3FBF5;
+}
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container {
+	width:400px;
+	height:490px;
+	background-color: #85F3D9;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.22), 0 4px 10px rgba(0,0,0,0.34);
+	margin: auto;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#turn {
+  width: 240px;
+  height: 80px;
+  vertical-align: middle;
+  line-height: 80px;
+  text-align: center;
+  background-color: #E3FBF5;
+  font-family:Futura;
+  font-size: 55px;
+  margin: 10px auto;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  color:#3AD621;
+  text-shadow:2px 2px 0px grey;
+}
+#divboard {
+  width:324px;
+  height:324px;
+  padding:0px;
+  margin: auto;
+  position: relative;
+  top:0;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+}
+.square {
+  width:100px;
+  height:100px;
+  margin:4px;
+  position:relative;
+  float:left;
+  background-color:#E3FBF5;
+  font-family: Futura;
+  font-size:100px;
+  text-align:center;
+  vertical-align:middle;
+  line-height:100px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  color:#F790A6;
+  text-shadow:2px 2px 0px grey;
+}
+.square:hover {
+	background-color: #F7FFFD;
+}
