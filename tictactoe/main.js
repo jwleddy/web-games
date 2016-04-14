@@ -1,7 +1,7 @@
 function isSolved(board) {
    if(/XXX......|...XXX...|......XXX|X..X..X|X...X...X|..X.X.X../.test(board.join(''))) return 'XXX';
    if(/OOO......|...OOO...|......OOO|O..O..O|O...O...O|..O.O.O../.test(board.join(''))) return 'OOO';
-   if(board.every(function(x) {x === 'X' || x === 'O'})) return 'BORING';
+   if(board.every(function (x) {return x === 'X' || x === 'O'})) return 'BORING';
 }
   for (i = 0; i < 9; i++) {
     document.getElementsByClassName('square')[i].addEventListener('click',function() {
