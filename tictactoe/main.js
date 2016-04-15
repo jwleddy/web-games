@@ -1,19 +1,18 @@
-function isSolved(board) {
-   if(/XXX......|...XXX...|......XXX|X..X..X|X...X...X|..X.X.X../.test(board.join(''))) return 'XXX';
-   if(/OOO......|...OOO...|......OOO|O..O..O|O...O...O|..O.O.O../.test(board.join(''))) return 'OOO';
-   if(board.every(function (x) {return x === 'X' || x === 'O'})) return 'BORING';
+function isSolved(b) {
+   if(/XXX.{6}|...XXX...|.{6}XXX|X..X..X|X...X...X|..X.X.X../.test(b)) return 'XXX';
+   if(/OOO.{6}|...OOO...|.{6}OOO|O..O..O|O...O...O|..O.O.O../.test(b)) return 'OOO';
+   if(/[XO]{9}/.test(b)) return 'BORING';
 }
-  for (i = 0; i < 9; i++) {
-    document.getElementsByClassName('square')[i].addEventListener('click',function() {
-    if (!this.textContent) {
-      var board = [];
-      this.textContent = document.getElementById('turn').textContent === 'X' ? 'X' : 'O';
-      document.getElementById('turn').textContent = document.getElementById('turn').textContent === 'X' ? 'O' : 'X';
-      for (i = 0; i < 9; i++) board.push(document.getElementsByClassName('square')[i].textContent || ' ');
-      if (isSolved(board)) {
-      	document.getElementById('turn').textContent = isSolved(board);
-        setTimeout(function(){ document.getElementById('turn').textContent = 'X'}, 1000);
-      	for (i = 0; i < 9; i++) document.getElementsByClassName('square')[i].textContent = '';
+for (i=0,s=document.querySelectorAll('.square'),t=document.querySelector('#turn');i<9;i++){
+  s[i].addEventListener('click',function(){
+    if(!this.textContent){
+      this.textContent=t.textContent=='X'?'X':'O';
+      t.textContent=t.textContent=='X'?'O':'X';
+      for(i=0,b='';i<9;i++)b+=(s[i].textContent||0);
+      if(isSolved(b)){
+      	t.textContent=isSolved(b);
+        setTimeout(function(){t.textContent='X'},1000);
+      	for(i in s)s[i].textContent='';
       }
     }
   });
